@@ -40,16 +40,13 @@ def game_over(screen:pg.Surface):
     pg.draw.rect(background, (0, 0, 0), (0,0,WIDTH, HEIGHT))#黒色の背景を描画
     pg.Surface.set_alpha(background, 100)#透明度を100に設定
     screen.blit(background, (0, 0))#背景を画面に描画
-
-    font = pg.font.Font(None, 80)#フォントを指定
+    font = pg.font.Font(None, 80)#フォントを作成
     moji = font.render("GAME OVER", True, (255, 255, 255))#文字の内容と色を指定
     screen.blit(moji, [WIDTH/3, HEIGHT/2 - 50])#文字を画面に描画
-
     emoji = pg.image.load("fig/8.png")#絵文字を読み込む
     screen.blit(emoji, [WIDTH/3-70, HEIGHT/2 -50])#絵文字を画面に描画
     emoji2 = pg.image.load("fig/8.png")#絵文字を読み込む
     screen.blit(emoji2, [WIDTH/3*2, HEIGHT/2 -50])#絵文字を画面に描画
-    
     pg.display.update()
     time.sleep(5)#5秒間待つ
 
@@ -109,7 +106,6 @@ def main():
         pg.display.update()
         tmr += 1
         clock.tick(50)
-
 
 if __name__ == "__main__":
     pg.init()
