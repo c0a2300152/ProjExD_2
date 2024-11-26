@@ -3,9 +3,6 @@ import random
 import sys
 import time
 import pygame as pg
-
-
-
 WIDTH, HEIGHT = 1100, 650 #1600, 900を修正
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 DELTA = {
@@ -14,8 +11,8 @@ DELTA = {
     pg.K_LEFT: (-5, 0),
     pg.K_RIGHT: (5, 0)
 }
-
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
 
 def check_bound(rct:pg.Rect):
 
@@ -29,6 +26,7 @@ def check_bound(rct:pg.Rect):
     if rct.top < 0 or rct.bottom > HEIGHT:
         tate = False
     return yoko, tate
+
 
 def game_over(screen:pg.Surface):
     """
@@ -106,10 +104,8 @@ def main():
         pg.display.update()
         tmr += 1
         clock.tick(50)
-
 if __name__ == "__main__":
     pg.init()
     main()
     pg.quit()
     sys.exit()
-#c
